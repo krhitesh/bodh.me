@@ -1,2 +1,2 @@
 # bodh.me
-Bodh website designed by hitesh1157
+### Bodh website designed by hitesh1157
