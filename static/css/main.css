@@ -575,7 +575,7 @@ html {
   .appstore-button, .da756fa2d41fb31154052c11a594dc2a {
     text-align: center;
     display: inline-block;
-    margin: 2%; }
+    margin: 0%; }
     @media screen and (max-width: 480px) {
       .appstore-button {
         width: 49%;
