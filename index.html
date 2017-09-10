@@ -7,7 +7,7 @@
     <title>Bodh - A journey towards jainism</title>
     <meta name="author" content="hitesh1157">
     <link rel="icon" type="image/png" sizes="32x32" href="./static/ico/favicon-32x32.png">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./static/css/normalize.css" />
     <link rel="stylesheet" href="./static/css/main.css" />
 
@@ -36,21 +36,37 @@
                         </ul>            </div>
                                     </div>
                                     <input type="text" pattern="\d*" name="number" id="phone-input" placeholder="###-###-####">
-                        
+                                      
+                                    
                                     <input type="submit" class="btn send" value="send">
+
+                                    <div class="g-recaptcha" data-sitekey="6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs"></div>
                         
                                 </div>
+
+
+                           
+                                    <div class="phone-result success">
+                                      <strong class="msg">Your message has been sent! Check your phone for a download link!</strong>
+                                    </div>
+
+                           
+                                    <div class="phone-result error">
+                                      <strong class="msg">There was an error with your message!</strong>
+                                    </div>
+
+                               
                         
-                                <div class="phone-result success">
-                                    <strong class="msg">Your message has been sent! Check your phone for a download link!</strong>
-                                </div>
-                                <div class="phone-result error">
-                                    <strong class="msg">There was an error with your message!</strong>
-                                </div>
+                                
+                                
                         
                                 <meta name="csrf-token" content="6e0RXB5UCFMph2hGjfKW9Cnsqajrd0FZ2ZbsxqEC 397412586551 da756fa2d41fb31154052c11a594dc2a">
                         
                                 </form>
+                             
+
+                            
+
         </div>
         <div class="download-area">
             <a href="#" class="btn download-now 397412586551" style="display: none;">Download Now</a>
@@ -164,6 +180,7 @@
     <script src="./static/js/jquery.viewport.js"></script>
     <script src="./static/js/modernizr-2.6.2.min.js"></script>
     <script src="./static/js/main.js"></script>
+
 
 
     

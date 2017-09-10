@@ -204,6 +204,7 @@ html {
     background: url("../../static/img/dust-background.png");
     text-align: center;
     padding: 50px 1rem 10rem 1rem; }
+    
     @media screen and (max-width: 480px) {
       .top {
         padding: 1rem 1rem 5rem 1rem; } }
@@ -247,7 +248,7 @@ html {
     width: 100%; }
   
   .download {
-    width: 450px;
+    width: 500px;
     margin: 25px auto 0 auto;
     position: relative; }
     @media screen and (max-width: 480px) {
@@ -727,4 +728,8 @@ html {
       @media screen and (max-width: 360px) {
         .dropdown .show-menu {
           left: 0; } }
-  
+
+p {
+  margin-top: 0!important;
+  /* margin-bottom: 0!important; */
+}
