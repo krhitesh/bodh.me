@@ -120,9 +120,15 @@ html {
       text-decoration: none; }
     @media screen and (max-width: 768px) {
       .footer {
-        background: #D67208 url("../../static/ico/bodh.png") no-repeat 20px 15px;
+        /* background: #D67208 url("../../static/ico/bodh.png") no-repeat 20px 15px; */
         padding: 0;
-        height: 80px; } }
+        height: 80px; }
+      
+        #twitter, #facebook, #instagram {
+          display: none;
+        }
+      
+      }
   
   .footer-home {
     position: absolute;
