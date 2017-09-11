@@ -111,7 +111,7 @@ $('#send-to-phone').on('submit', function(e){
     type: 'json'
   }
 
-  doPutCall(url, options)
+  doPostCall(url, options)
     .then((response) => {
       $('.download').addClass('success').removeClass('fail');
     })
