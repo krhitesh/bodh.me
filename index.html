@@ -17,7 +17,8 @@
             if(response == "" || response == undefined || response.length == 0){
                 // Do something
             } else {
-                alert(response);
+                $("#send").removeAttr("disabled");
+                $("#send").removeClass("disabled");
             }
         };
         var onloadCallback = function() {
