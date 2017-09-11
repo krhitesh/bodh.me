@@ -13,29 +13,23 @@
     <link rel="stylesheet" href="./static/css/main.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        var verifyCallback = function(Id) {
-          var res = grecaptcha.getResponse(Id);
-            console.log(res)
-          if (res == "" || res == undefined || res.length == 0)
-             {
-              return false;
-             }
-           return true;
-            
+        var verifyCallback = function(response) {
+            if(response == "" || response == undefined || response.length == 0){
+                // Do something
+            } else {
+                alert(response);
+            }
         };
         var onloadCallback = function() {
         //   alert("grecaptcha is ready!");
-            var widId = "";
-            widId = grecaptcha.render("recaptcha", {"sitekey": "6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs", "theme": "light"});
-            var response = verifyCallback(widId);
-            console.log(response);
+          grecaptcha.render("recaptcha", {"sitekey": "6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs", "theme": "light", "callback" : verifyCallback});
         };
 
         
       </script>
 
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
     </script>  
 </head>
 
