@@ -15,6 +15,7 @@
     <script type="text/javascript">
         var verifyCallback = function(Id) {
           var res = grecaptcha.getResponse(Id);
+            console.log(res)
           if (res == "" || res == undefined || res.length == 0)
              {
               return false;
