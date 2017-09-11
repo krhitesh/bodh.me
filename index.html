@@ -13,45 +13,28 @@
     <link rel="stylesheet" href="./static/css/main.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-          var verifyCallback = function(response) {
-
-            var secret = "6LfTETAUAAAAAJCWup50djN_tlhQFVk6ip7AVc02"
-            var response = toString(response);
-//             var url = "https://www.google.com/recaptcha/api/siteverify?secret="+secret+"&response="+response;  
-//             $.getJSON( url, function( data ) {
-//               console.log(response);
-//             });  
-    
-            $.ajax({
-                dataType: "json",
-                headers: {
-                        'Access-Control-Allow-Origin': '*',
-                        'Access-Control-Allow-Methods': 'POST'
-                    },
-                type: "POST",
-                url: 'https://www.google.com/recaptcha/api/siteverify',
-                data: {"secret": secret, "response": response},
-                success: function(jsonResponse) {
-                    console.log(jsonResponse);
-                    if(jsonResponse.success){
-                        $("#send").removeAttr("disabled");
-                        $("send").removeClass("disabled");
-                    } else{
-                        alert(jsonResponse.error-codes[0]);
-                    }
-                }
-            });
+        var verifyCallback = function(Id) {
+          var res = grecaptcha.getResponse(Id);
+          if (res == "" || res == undefined || res.length == 0)
+             {
+              return false;
+             }
+           return true;
+            
         };
         var onloadCallback = function() {
         //   alert("grecaptcha is ready!");
-          grecaptcha.render("recaptcha", {"sitekey": "6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs", "theme": "light", "callback" : verifyCallback});
+            var widId = "";
+            widId = grecaptcha.render("recaptcha", {"sitekey": "6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs", "theme": "light"});
+            var response = verifyCallback(widId);
+            console.log(response);
         };
 
         
       </script>
 
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-    async defer>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
     </script>  
 </head>
 
