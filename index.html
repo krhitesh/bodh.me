@@ -17,12 +17,13 @@
 
             var secret = "6LfTETAUAAAAAJCWup50djN_tlhQFVk6ip7AVc02"
             var response = toString(response);
-            var url = "https://www.google.com/recaptcha/api/siteverify?secret="+secret+"&response="+response;  
-            $.getJSON( url, function( data ) {
-              console.log(response);
-            });  
+//             var url = "https://www.google.com/recaptcha/api/siteverify?secret="+secret+"&response="+response;  
+//             $.getJSON( url, function( data ) {
+//               console.log(response);
+//             });  
     
             $.ajax({
+                dataType: "json",
                 type: "POST",
                 url: 'https://www.google.com/recaptcha/api/siteverify',
                 data: {"secret": secret, "response": response},
