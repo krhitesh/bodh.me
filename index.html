@@ -8,9 +8,41 @@
     <title>Bodh - A journey towards jainism</title>
     <meta name="author" content="hitesh1157">
     <link rel="icon" type="image/png" sizes="32x32" href="./static/ico/favicon-32x32.png">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <link rel="stylesheet" href="./static/css/normalize.css" />
     <link rel="stylesheet" href="./static/css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+          var verifyCallback = function(response) {
+            alert(response);
+            var secret = "6LfTETAUAAAAAJCWup50djN_tlhQFVk6ip7AVc02"
+            var response = toString(response);
+    
+            $.ajax({
+                type: "POST",
+                url: 'https://www.google.com/recaptcha/api/siteverify',
+                data: {"secret": secret, "response": response},
+                success: function(jsonResponse) {
+                    if(jsonResponse.success){
+                        $("#send").removeAttr("disabled");
+                        $("send").removeClass("disabled");
+                    } else{
+                        alert(jsonResponse.error-codes[0]);
+                    }
+                }
+            });
+        };
+        var onloadCallback = function() {
+        //   alert("grecaptcha is ready!");
+          grecaptcha.render("recaptcha", {"sitekey": "6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs", "theme": "light", "callback" : verifyCallback});
+        };
+
+        
+      </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+    </script>  
 </head>
 
 <body>
@@ -28,7 +60,7 @@
             <form method="POST" action="?" accept-charset="UTF-8" id="send-to-phone">
                 <input name="_token" type="hidden" value="6e0RXB5UCFMph2hGjfKW9Cnsqajrd0FZ2ZbsxqEC">
                 <label>Send a download link to your phone: </label>
-                <div style="margin: auto; width:65%; padding:10px;" class="g-recaptcha" data-sitekey="6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs"></div>
+                <div id="recaptcha" style="margin: auto; width:65%; padding:10px;" class="g-recaptcha" data-sitekey="6LfTETAUAAAAAJOkhn9ZfsTEFQIUFrB8y2R3uNOs"></div>
                 <div class="phone-number da756fa2d41fb31154052c11a594dc2a">
                     <div class="dropdown">
                         <div class="dropdown-container da756fa2d41fb31154052c11a594dc2a">
@@ -40,7 +72,10 @@
                     </div>
                     <input type="text" pattern="\d*" name="number" id="phone-input" placeholder="###-###-####">
                     
-                    <input type="submit" class="btn send" value="send">
+                    <input id="send" type="submit" class="btn send disabled" value="send" disabled>
+                    <style>
+                        .disabled {color:#454545;}
+                    </style>
                 </div>
                 <div class="phone-result success">
                     <strong class="msg">Your message has been sent! Check your phone for a download link!</strong>
@@ -55,6 +90,7 @@
             <a href="#" class="btn download-now 397412586551" style="display: none;">Download Now</a>
             <div class="storebuttons">
                 <div class="storebutton android"><a href="#"><img src="https://www.usedust.com/img/themes/dust2016/get-it-on-google-play.png" data-rjs="2" alt="google play"></a></div>
+
                 <!-- <div class="storebutton ios"><a href="#"><img src="https://www.usedust.com/img/themes/dust2016/download-on-app-store.png" data-rjs="2" alt="ios download"></a></div> -->
             </div>
             <meta name="csrf-token" content="6e0RXB5UCFMph2hGjfKW9Cnsqajrd0FZ2ZbsxqEC">
@@ -140,7 +176,7 @@
     <noscript>
         &lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l4gm4&amp;p_id=Twitter" /&gt; &lt;img height="1" width="1" style="display:none;" alt="" src="https://t.co/i/adsct?txn_id=l4gm4&amp;p_id=Twitter" /&gt;
     </noscript>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    
     <script src="./static/js/retina.js"></script>
     <script src="./static/js/jquery.viewport.js"></script>
     <script src="./static/js/modernizr-2.6.2.min.js"></script>
