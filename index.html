@@ -24,6 +24,10 @@
     
             $.ajax({
                 dataType: "json",
+                headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'POST'
+                    },
                 type: "POST",
                 url: 'https://www.google.com/recaptcha/api/siteverify',
                 data: {"secret": secret, "response": response},
