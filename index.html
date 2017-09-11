@@ -23,6 +23,7 @@
                 url: 'https://www.google.com/recaptcha/api/siteverify',
                 data: {"secret": secret, "response": response},
                 success: function(jsonResponse) {
+                    console.log(jsonResponse);
                     if(jsonResponse.success){
                         $("#send").removeAttr("disabled");
                         $("send").removeClass("disabled");
