@@ -210,7 +210,7 @@ html {
   .top {
     background: url("../../static/img/dust-background.png");
     text-align: center;
-    padding: 50px 1rem 10rem 1rem; }
+     }
     
     @media screen and (max-width: 480px) {
       .top {
@@ -276,7 +276,7 @@ html {
       color: #000; }
   
   .storebuttons {
-    margin-top: 45px; }
+    margin-top: 40px!important; }
   
   .storebutton {
     display: inline-block; }
@@ -582,7 +582,7 @@ html {
   **/
   .appstore-button, .da756fa2d41fb31154052c11a594dc2a {
     text-align: center;
-    display: inline-block;
+    /* display: inline-block; */
     margin: 0%; }
     @media screen and (max-width: 480px) {
       .appstore-button {
@@ -594,11 +594,12 @@ html {
   
   .dropdown {
     color: #a9a9a9;
-    margin-right: 0;
+    margin-left: 30px;
     float: left;
     display: block;
     margin-right: 3.57866%;
-    width: 35.26334%; }
+    width: 50%;
+     }
     .dropdown:last-child {
       margin-right: 0; }
     .dropdown .dropdown-container {
@@ -617,10 +618,10 @@ html {
   
   #phone-input {
     margin-right: 0;
-    float: left;
+    /* float: right; */
     display: block;
     margin-right: 3.57866%;
-    width: 35.26334%;
+    
     border: 2px solid transparent;
     border-radius: 5px;
     font-size: 18px;
@@ -740,8 +741,10 @@ p {
   margin-top: 0!important;
   /* margin-bottom: 0!important; */
 }
+
+.msg, #or{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"!important;}
 .disabled {
-  border: 1px solid #999999;
+  /* border: 1px solid #999999; */
   background-color: #cccccc!important;
   color: #666666!important;
 }
