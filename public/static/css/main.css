@@ -611,7 +611,7 @@ html {
       width: 100%;
       border-radius: 5px; }
     .dropdown .dropdown-menu {
-      height: 400px;
+      height: 300px;
       overflow: scroll; }
       .dropdown .dropdown-menu a {
         color: #000; }
@@ -705,7 +705,7 @@ html {
       position: absolute;
       right: 0;
       top: 42px;
-      width: 228px;
+      /* width: 228px; */
       border-radius: 6px;
       z-index: 99999;
       /*&:before {

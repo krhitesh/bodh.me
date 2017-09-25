@@ -100,10 +100,9 @@ $('#send-to-phone').on('submit', function(e){
 
   phone_number = countrycode + phone_number;
 
-  var url = MESSAGE.URL.STAGING + "/message/request";
+  var url = MESSAGE.URL.STAGING + "/message/requestsms";
   var info = {
     "phone": phone_number,
-    "Validity": true
   }
 
   var options = {
