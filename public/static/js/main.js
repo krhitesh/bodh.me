@@ -10,7 +10,7 @@ var MESSAGE = {
     INVALID_PHONE: 'Please enter a valid phone number!'
   },
   URL: {
-    STAGING: 'https://stage-api.bodh.me'
+    STAGING: 'http://localhost:9000'
   }
 }
 
@@ -98,11 +98,11 @@ $('#send-to-phone').on('submit', function(e){
     return;
   }
 
-  phone_number = countrycode + phone_number;
 
   var url = MESSAGE.URL.STAGING + "/message/requestsms";
   var info = {
     "phone": phone_number,
+    "countryCode": countrycode
   }
 
   var options = {
