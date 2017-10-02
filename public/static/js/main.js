@@ -6,11 +6,11 @@ var IOS_URL = 'https://dust.to/1UXkmbb';
 
 var MESSAGE = {
   ERROR: {
-    DEFAULT: 'There was an error with your message!',
+    DEFAULT: 'Internal error',
     INVALID_PHONE: 'Please enter a valid phone number!'
   },
   URL: {
-    STAGING: 'http://localhost:9000'
+    STAGING: 'https://stage-api.bodh.me'
   }
 }
 
@@ -98,12 +98,13 @@ $('#send-to-phone').on('submit', function(e){
     return;
   }
 
-
   var url = MESSAGE.URL.STAGING + "/message/requestsms";
   var info = {
     "phone": phone_number,
     "countryCode": countrycode
   }
+
+  
 
   var options = {
     body: info,
@@ -113,10 +114,16 @@ $('#send-to-phone').on('submit', function(e){
   doPostCall(url, options)
     .then((response) => {
       $('.download').addClass('success').removeClass('fail');
+
     })
     .catch(err => {
       $('.download').addClass('fail').removeClass('success');
       $('.phone-result.error .msg').html(MESSAGE.ERROR.DEFAULT);
+      firebase.database().ref('bodh_me/visitors/sms_failed/').push({
+          countrycode,
+          phone_number
+      });
+
       console.log(err);
   })
 
