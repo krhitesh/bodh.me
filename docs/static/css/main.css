@@ -86,7 +86,7 @@ html {
     /*
        * Set a base background for 1x environments.
        */
-    background: url("https://raw.githubusercontent.com/hitesh1157/bodh.me/master/public/static/ico/bodh-small.png?token=AYbfzgZsI6KZj7OnEqqe3nxxPn7YftmFks5Z2y5ZwA%3D%3D") no-repeat left;
+    background: url("../ico/bodh-small.png") no-repeat left;
     background-size: 116px 70px;
     /*
        * Create an @2x-ish media query.
@@ -208,7 +208,7 @@ html {
       display: inline-block; }
   
   .top {
-    background: url("https://raw.githubusercontent.com/hitesh1157/bodh.me/master/public/static/img/dust-background.png?token=AYbfztlAjFiaVawoxvqPPCcmJjb5KmWFks5Z2y3kwA%3D%3D");
+    background: url("../img/dust-background.png");
     text-align: center;
      }
     
@@ -379,7 +379,7 @@ html {
     /*
        * Set a base background for 1x environments.
        */
-    background: url("https://raw.githubusercontent.com/hitesh1157/bodh.me/master/public/static/img/iPhone.png?token=AYbfzuRBkf-Z_AVOidKX3Uf7eYls6neeks5Z2y6gwA%3D%3D") no-repeat;
+    background: url("../img/iPhone.png") no-repeat;
     background-size: 350px 710px;
     /*
        * Create an @2x-ish media query.
@@ -399,11 +399,11 @@ html {
     position: relative; }
     @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
       .phone {
-        background: url("https://raw.githubusercontent.com/hitesh1157/bodh.me/master/public/static/img/iPhone%402x.png?token=AYbfzillfzUop1t9E4MkPm4s5X9Oq0bMks5Z2y62wA%3D%3D") no-repeat;
+        background: url("../img/iPhone@2x.png") no-repeat;
         background-size: 350px 710px; } }
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       .phone {
-        background: url("https://raw.githubusercontent.com/hitesh1157/bodh.me/master/public/static/img/iPhone%402x.png?token=AYbfzillfzUop1t9E4MkPm4s5X9Oq0bMks5Z2y62wA%3D%3D") no-repeat;
+        background: url("../img/iPhone@2x.png") no-repeat;
         background-size: 350px 710px; } }
     @media screen and (max-width: 1366px) {
       .phone {
